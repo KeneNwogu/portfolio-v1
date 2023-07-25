@@ -41,4 +41,4 @@ To build once, run
 npm run build
 ```
 
-Enjoy! yum
+Enjoy! 😋

@@ -1,0 +1,29 @@
+{
+  "name": "vue-vite-tailwind-starter",
+  "version": "1.0.0",
+  "description": "Simple file structure for Vue + Vite + Tailwind projects",
+  "private": true,
+  "type": "module",
+  "author": "David Hermosilla Duro",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "vite": "^4.4.7",
+    "vite-plugin-eslint": "^1.8.1",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "eslint-config-prettier": "^8.8.0",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "autoprefixer": "^10.4.14",
+    "prettier-plugin-tailwindcss": "^0.4.1"
+  }
+}

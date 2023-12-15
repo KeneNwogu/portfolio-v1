@@ -21,13 +21,13 @@ Required plugins (must be installed via VSCode extensions):
 
 Install required VSCode plugins
 
-Install dependencies
+Install dependencies:
 
 ```
 npm install
 ```
 
-Run the app
+Run the app:
 
 ```
 npm run dev
@@ -35,7 +35,7 @@ npm run dev
 
 Add any config values to the **tailwind.config.js** file
 
-To build once, run
+To build once, run:
 
 ```
 npm run build

@@ -566,6 +566,7 @@ const projects = [
       "Docker",
       "Azure",
     ],
+    link: "https://github.com/KeneNwogu/chowdeck"
   },
   {
     title: "Tweeter!",

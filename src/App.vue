@@ -154,6 +154,7 @@
               <div class="pt-4">
                 <button
                   class="w-full bg-white px-6 py-3 font-semibold text-black transition-all duration-300 hover:scale-105"
+                  @click="downloadCV"
                 >
                   Download CV
                 </button>
@@ -504,6 +505,16 @@ import XLogo from './assets/x.png';
 import LinkedInLogo from './assets/linkedin.png';
 import GitHubLogo from './assets/github.png';
 import GmailLogo from './assets/gmail.png';
+import Resume from './assets/resume.pdf';
+
+const downloadCV = () => {
+  const link = document.createElement("a");
+  link.href = Resume;
+  link.download = "resume.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 // Reactive data
 const activeNav = ref("Home");

@@ -542,7 +542,7 @@ const projects = [
   {
     title: "SpeakToDocs",
     description:
-      "Contributed to an open-source project (speaktodocs) to develop an interactive platfom for users toask questions about their uploaded documents through speech or text.",
+      "Contributed to an open-source project (speaktodocs) to develop an interactive platfom for users to ask questions about their uploaded documents through speech or text.",
     image: streamlitLogo,
     technologies: [
       "Python",

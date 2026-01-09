@@ -505,6 +505,8 @@ import XLogo from './assets/x.png';
 import LinkedInLogo from './assets/linkedin.png';
 import GitHubLogo from './assets/github.png';
 import GmailLogo from './assets/gmail.png';
+import BasketGroupLogo from './assets/basketgroup.png';
+import GeniusLogo from './assets/genius.svg';
 import Resume from './assets/resume.pdf';
 
 const downloadCV = () => {
@@ -587,6 +589,35 @@ const projects = [
 
 const workExperience = [
   {
+    role: "Backend Engineer (Contract)",
+    company: "Genius By PettySave MFB",
+    period: "Aug 2025 - Dec 2025",
+    description: "Led the design of an automated background processing system that handled unresolved transaction states, eliminating the majority of customer service escalations related to pending transfers.",
+    technologies: [
+      "Nest.js",
+      "MongoDB",
+      "Python",
+      "Redis"
+    ],
+    logo: GeniusLogo,
+    website: "https://customer.geniusforyou.com/",
+  },
+  {
+    role: "Backend Engineer (Part-time)",
+    company: "Nigerian Datasets",
+    period: "Sept 2025 - Present",
+    description:
+      "Collaborative platform for Nigerian Data Scientists to share and access datasets tailored to Nigeria.",
+    technologies: [
+      "Django",
+      "Pandas",
+      "Python",
+      "PostgreSQL",
+    ],
+    logo: BasketGroupLogo,
+    website: "https://nigeriandatasets.com/",
+  },
+  {
     role: "Software Engineer (Contract)",
     company: "ITMO Unilag",
     period: "May 2025 - Aug 2025",
@@ -601,7 +632,7 @@ const workExperience = [
       "Docker",
     ],
     logo: itmoLogo,
-    website: "https://innovation.unilag.edu.ng/",
+    website: "https://itmobot.unilag.edu.ng/chat",
   },
   {
     role: "Software Engineer",

@@ -607,7 +607,7 @@ const workExperience = [
     company: "Nigerian Datasets",
     period: "Sept 2025 - Present",
     description:
-      "Collaborative platform for Nigerian Data Scientists to share and access datasets tailored to Nigeria.",
+      "Architected the core data model and metadata pipelines for a collaborative platform that helps Nigerian data scientists share, index, and access Nigeria-specific datasets.",
     technologies: [
       "Django",
       "Pandas",

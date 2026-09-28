@@ -2,6 +2,160 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------- Design tokens (plan §29) ---------- */
+:root {
+  --c-base: #0a0a0c;
+  --c-surface: #111114;
+  --c-line: #232329;
+  --c-ink: #f4f4f5;
+  --c-muted: #a0a0ab;
+  --c-faint: #6e6e78;
+  --c-accent: #f05252;
+  --c-accent-dim: #c23a3a;
+  --c-accent-soft: rgba(240, 82, 82, 0.1);
+
+  /* fluid type scale (plan §28) */
+  --text-hero: clamp(2.75rem, 7vw, 5.5rem);
+  --text-section: clamp(1.875rem, 4vw, 3.25rem);
+  --text-project: clamp(1.5rem, 3vw, 2.5rem);
+  --text-body: clamp(1rem, 1.1vw, 1.125rem);
+  --text-meta: 0.8125rem;
+
+  /* section rhythm (plan §32) */
+  --section-gap: clamp(5rem, 10vw, 9rem);
+
+  /* pointer glow (plan §8), set by useMouseGlow */
+  --mouse-x: 50vw;
+  --mouse-y: 30vh;
+}
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  @apply bg-canvas font-sans text-ink antialiased;
+  font-size: var(--text-body);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--c-accent-soft);
+  color: var(--c-ink);
+}
+
+/* visible keyboard focus everywhere (plan §42/43) */
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Scroll reveal (plan §25) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Hero entrance (plan §7/§50) ---------- */
+.hero-rise {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-line-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-line-mask > span {
+  display: block;
+  transform: translateY(110%);
+  animation: hero-line 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  /* prevent descender clipping from the overflow mask */
+  padding-bottom: 0.09em;
+  margin-bottom: -0.09em;
+}
+
+@keyframes hero-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-line {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Backgrounds (plan §30) ---------- */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(
+      600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(240, 82, 82, 0.05),
+      transparent 65%
+    ),
+    radial-gradient(
+      900px circle at 70% 10%,
+      rgba(240, 82, 82, 0.06),
+      transparent 60%
+    );
+}
+
+/* ---------- Reduced motion (plan §26) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .hero-rise {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .hero-line-mask > span {
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .hero-glow {
+    background: radial-gradient(
+      900px circle at 70% 10%,
+      rgba(240, 82, 82, 0.06),
+      transparent 60%
+    );
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

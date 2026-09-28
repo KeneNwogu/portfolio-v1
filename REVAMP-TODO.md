@@ -161,6 +161,7 @@ Page order (§4): Navbar → Hero → Selected Work → Capabilities → Experie
 - `h-full` on project cards for equal-height grid rows
 - Removed unused asset imports (company logos, social icons, chowdeck screenshot) — dist now only ships assets actually rendered; removed "Go" from skills (not supported by real content, Rule 5)
 - Production build passes clean: **0 ESLint errors/warnings**, JS 102 kB (36 kB gzip), CSS 24 kB (5.5 kB gzip)
+- **Mobile navbar fixes:** color tokens converted to RGB-triplet + `<alpha-value>` pattern — raw `var()` colors silently broke every opacity modifier (`bg-canvas/95` menu overlay and `bg-canvas/80` scrolled header generated no CSS at all → transparent navbar/menu). Mobile menu now `Teleport`ed to `<body>` (header `backdrop-filter` was trapping its `fixed` positioning) and layered below the header (z-40 < z-50) so the X button and brand link are clickable again; overlay background fully opaque; click on brand or empty overlay space closes the menu.
 
 ## Backlog / Optional (not yet done)
 

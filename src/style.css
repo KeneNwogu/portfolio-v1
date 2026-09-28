@@ -4,15 +4,26 @@
 
 /* ---------- Design tokens (plan §29) ---------- */
 :root {
-  --c-base: #0a0a0c;
-  --c-surface: #111114;
-  --c-line: #232329;
-  --c-ink: #f4f4f5;
-  --c-muted: #a0a0ab;
-  --c-faint: #6e6e78;
-  --c-accent: #f05252;
-  --c-accent-dim: #c23a3a;
-  --c-accent-soft: rgba(240, 82, 82, 0.1);
+  /* RGB channel triplets — lets Tailwind opacity modifiers (bg-canvas/80) work */
+  --c-base-rgb: 10 10 12;
+  --c-surface-rgb: 17 17 20;
+  --c-line-rgb: 35 35 41;
+  --c-ink-rgb: 244 244 245;
+  --c-muted-rgb: 160 160 171;
+  --c-faint-rgb: 110 110 120;
+  --c-accent-rgb: 240 82 82;
+  --c-accent-dim-rgb: 194 58 58;
+
+  /* solid aliases for direct CSS use */
+  --c-base: rgb(var(--c-base-rgb));
+  --c-surface: rgb(var(--c-surface-rgb));
+  --c-line: rgb(var(--c-line-rgb));
+  --c-ink: rgb(var(--c-ink-rgb));
+  --c-muted: rgb(var(--c-muted-rgb));
+  --c-faint: rgb(var(--c-faint-rgb));
+  --c-accent: rgb(var(--c-accent-rgb));
+  --c-accent-dim: rgb(var(--c-accent-dim-rgb));
+  --c-accent-soft: rgb(var(--c-accent-rgb) / 0.1);
 
   /* fluid type scale (plan §28) */
   --text-hero: clamp(2.75rem, 7vw, 5.5rem);

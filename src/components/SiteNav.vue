@@ -108,28 +108,34 @@ onBeforeUnmount(() => {
       </button>
     </nav>
 
-    <!-- Mobile full-screen menu (plan §34) -->
-    <Transition name="menu">
-      <div
-        v-if="menuOpen"
-        id="mobile-menu"
-        class="bg-canvas/95 fixed inset-0 z-40 flex flex-col px-5 pb-10 pt-24 backdrop-blur-lg md:hidden"
-      >
-        <a
-          v-for="section in navSections"
-          :key="section.id"
-          :href="`#${section.id}`"
-          class="border-b border-line py-5 font-display text-2xl font-semibold tracking-tight text-ink transition-colors duration-200 hover:text-accent"
-          @click="menuOpen = false"
+    <!-- Mobile full-screen menu (plan §34).
+         Teleported to <body> so the header's backdrop-filter can't trap its
+         fixed positioning, and layered *below* the header (z-40 < z-50) so the
+         close button and brand link stay clickable while the menu is open. -->
+    <Teleport to="body">
+      <Transition name="menu">
+        <div
+          v-if="menuOpen"
+          id="mobile-menu"
+          class="fixed inset-0 z-40 flex flex-col bg-canvas px-5 pb-10 pt-24 md:hidden"
+          @click.self="menuOpen = false"
         >
-          {{ section.label }}
-        </a>
-        <p class="mt-8 flex items-center gap-2 font-mono text-xs text-faint">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
-          Available for opportunities
-        </p>
-      </div>
-    </Transition>
+          <a
+            v-for="section in navSections"
+            :key="section.id"
+            :href="`#${section.id}`"
+            class="border-b border-line py-5 font-display text-2xl font-semibold tracking-tight text-ink transition-colors duration-200 hover:text-accent"
+            @click="menuOpen = false"
+          >
+            {{ section.label }}
+          </a>
+          <p class="mt-8 flex items-center gap-2 font-mono text-xs text-faint">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
+            Available for opportunities
+          </p>
+        </div>
+      </Transition>
+    </Teleport>
   </header>
 </template>
 

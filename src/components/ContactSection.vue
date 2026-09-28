@@ -81,16 +81,16 @@ onBeforeUnmount(() => clearTimeout(copiedTimer));
               :href="social.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="group flex min-h-[44px] items-center gap-3 rounded-md px-3 py-2 transition-colors duration-200 hover:bg-white/[0.03]"
+              class="group flex min-h-[44px] max-w-full items-center gap-3 rounded-md px-3 py-2 transition-colors duration-200 hover:bg-white/[0.03]"
             >
-              <span class="text-sm text-muted transition-colors duration-200 group-hover:text-ink">
+              <span class="shrink-0 text-sm text-muted transition-colors duration-200 group-hover:text-ink">
                 {{ social.name }}
               </span>
-              <span class="font-mono text-xs text-faint transition-colors duration-200 group-hover:text-accent">
+              <span class="min-w-0 truncate font-mono text-xs text-faint transition-colors duration-200 group-hover:text-accent">
                 {{ social.handle }}
               </span>
               <svg
-                class="h-3.5 w-3.5 text-faint transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+                class="h-3.5 w-3.5 shrink-0 text-faint transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
                 viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
               >
                 <path d="M4 12 12 4M6 4h6v6" stroke-linecap="round" stroke-linejoin="round" />

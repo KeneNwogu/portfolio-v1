@@ -162,6 +162,7 @@ Page order (§4): Navbar → Hero → Selected Work → Capabilities → Experie
 - Removed unused asset imports (company logos, social icons, chowdeck screenshot) — dist now only ships assets actually rendered; removed "Go" from skills (not supported by real content, Rule 5)
 - Production build passes clean: **0 ESLint errors/warnings**, JS 102 kB (36 kB gzip), CSS 24 kB (5.5 kB gzip)
 - **Mobile navbar fixes:** color tokens converted to RGB-triplet + `<alpha-value>` pattern — raw `var()` colors silently broke every opacity modifier (`bg-canvas/95` menu overlay and `bg-canvas/80` scrolled header generated no CSS at all → transparent navbar/menu). Mobile menu now `Teleport`ed to `<body>` (header `backdrop-filter` was trapping its `fixed` positioning) and layered below the header (z-40 < z-50) so the X button and brand link are clickable again; overlay background fully opaque; click on brand or empty overlay space closes the menu.
+- **Mobile horizontal overflow fix:** terminal `<pre>` blocks (long mono lines) were stretching grid tracks because grid items default to `min-width: auto` — added `min-w-0` to showcase/about grid columns so the `overflow-x-auto` terminals scroll internally instead of widening the page; contact social handles now `truncate` with `shrink-0` name/icon; `overflow-x: clip` on `body` as insurance (clip creates no scroll container, so fixed nav / smooth scroll / IntersectionObserver are unaffected).
 
 ## Backlog / Optional (not yet done)
 

@@ -20,7 +20,7 @@ import ScrollReveal from './ui/ScrollReveal.vue';
           :href="article.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:border-faint/50 group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-surface transition-colors duration-300"
+          class="group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-surface transition-colors duration-300 hover:border-faint/50"
         >
           <div class="overflow-hidden bg-canvas">
             <img

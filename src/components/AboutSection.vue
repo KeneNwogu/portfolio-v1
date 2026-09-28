@@ -10,7 +10,7 @@ import ScrollReveal from './ui/ScrollReveal.vue';
     <SectionHeader eyebrow="About" title="Engineer first, generalist by choice." />
 
     <div class="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
-      <ScrollReveal class="space-y-5 text-lg leading-relaxed text-muted">
+      <ScrollReveal class="min-w-0 space-y-5 text-lg leading-relaxed text-muted">
         <p>
           I like turning complicated requirements into simple systems that are
           <span class="text-ink">reliable, observable and easy to maintain</span>.
@@ -52,7 +52,7 @@ import ScrollReveal from './ui/ScrollReveal.vue';
       </ScrollReveal>
 
       <!-- Easter egg: small terminal card (§20) -->
-      <ScrollReveal :delay="100">
+      <ScrollReveal :delay="100" class="min-w-0">
         <div class="overflow-hidden rounded-lg border border-line bg-[#0d0d10]">
           <div class="flex items-center justify-between border-b border-line bg-surface px-4 py-2.5">
             <span class="font-mono text-[11px] text-faint">kcee@portfolio — bash</span>

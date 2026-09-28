@@ -11,7 +11,7 @@ const props = defineProps({
     :href="props.project.href"
     target="_blank"
     rel="noopener noreferrer"
-    class="hover:border-faint/50 focus-visible:border-faint/50 group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-surface transition-colors duration-300"
+    class="group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-surface transition-colors duration-300 hover:border-faint/50 focus-visible:border-faint/50"
     :aria-label="`${props.project.title} — ${props.project.description}`"
   >
     <div class="overflow-hidden bg-canvas">

@@ -14,7 +14,7 @@ const props = defineProps({
     >
       <template v-for="(node, i) in props.nodes" :key="node">
         <div
-          class="hover:border-accent/40 rounded-md border border-line bg-canvas px-4 py-3 text-center font-mono text-xs text-ink transition-colors duration-300 md:px-5"
+          class="rounded-md border border-line bg-canvas px-4 py-3 text-center font-mono text-xs text-ink transition-colors duration-300 hover:border-accent/40 md:px-5"
         >
           {{ node }}
         </div>

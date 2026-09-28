@@ -14,7 +14,7 @@ const props = defineProps({
 <template>
   <ScrollReveal as="article" class="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
     <!-- Visual -->
-    <div :class="props.flipped ? 'lg:order-2' : ''">
+    <div class="min-w-0" :class="props.flipped ? 'lg:order-2' : ''">
       <TerminalVisual v-if="props.project.visual === 'terminal'" />
       <FlowDiagram
         v-else-if="props.project.visual === 'flow'"
@@ -37,7 +37,7 @@ const props = defineProps({
     </div>
 
     <!-- Content -->
-    <div :class="props.flipped ? 'lg:order-1' : ''">
+    <div class="min-w-0" :class="props.flipped ? 'lg:order-1' : ''">
       <p class="mb-3 flex items-center gap-3 font-mono text-xs text-faint">
         <span class="text-accent">{{ props.project.number }}</span>
         <span aria-hidden="true">—</span>

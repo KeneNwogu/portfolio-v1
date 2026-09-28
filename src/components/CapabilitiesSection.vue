@@ -63,7 +63,7 @@ import ScrollReveal from './ui/ScrollReveal.vue';
             <span
               v-for="tech in workingWith"
               :key="tech"
-              class="hover:border-accent/40 rounded-full border border-line bg-surface px-3.5 py-1.5 font-mono text-xs text-muted transition-colors duration-200 hover:text-ink"
+              class="rounded-full border border-line bg-surface px-3.5 py-1.5 font-mono text-xs text-muted transition-colors duration-200 hover:border-accent/40 hover:text-ink"
             >
               {{ tech }}
             </span>

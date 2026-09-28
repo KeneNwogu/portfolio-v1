@@ -50,6 +50,10 @@ body {
   font-size: var(--text-body);
   line-height: 1.65;
   text-rendering: optimizeLegibility;
+  /* insurance against horizontal overflow (plan §63);
+     `clip` (not `hidden`) so no scroll container is created —
+     fixed nav, smooth scrolling and IntersectionObserver are unaffected */
+  overflow-x: clip;
 }
 
 ::selection {
